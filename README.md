@@ -7,7 +7,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 
 #### part 1 - Installation
 - [setting up bootable drive](#setting-up-bootable-drive)
-- [preparing asus bios](#preparin-asus-bios)
+- [preparing asus bios](#preparing-asus-bios)
 - [os-installation](#os-installation)
 - [post installation issues](#post-installation-issues)
 
@@ -20,3 +20,13 @@ installation and post setup guide for running fedora on a asus laptop specifical
 > alternatively you can use fedora media writer to fetch the latest iso and flash it to a usb drive
 
 <br/>
+
+## preparing asus bios
+1. reboot asus laptop and repeatedly press `f2` to enter bios
+2. navigate to security tab and disable `secure boot`
+> while fedora support secure boot, disabling it temporarily prevents third-party driver issue
+
+<br/>
+
+3. find fast boot and disable it
+4. save changes and exit (**f10**)
