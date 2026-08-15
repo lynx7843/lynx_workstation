@@ -74,7 +74,7 @@ sudo dnf install cheese
 
 <br/>
 
-# dnf config
+## dnf config
 1. open the dnf config file:
 ```bash
 sudo nano /etc/dnf/dnf.conf
@@ -87,6 +87,29 @@ keepcache=True
 3. update to test the changes
 ```bash
 sudo dnf update -y
+```
+
+<br/>
+
+## rpm fusion
+
+1. enable both free and non-free repositories
+```bash
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+```
+2. run the following command to check the changes
+```bash
+sudo dnf repolist --all | grep -i fusion
+```
+> check if rpmfusion-free-rawhide and rpmfusion-free is enabled
+
+<br/>
+
+3. if the following are disabled, run the following commands
+```bash
+sudo dnf config-manager setopt rpmfusion-free.enabled=1
+sudo dnf config-manager setopt rpmfusion-free-updates.enabled=1
+sudo dnf config-manager setopt rpmfusion-free-rawhide.enabled=0
 ```
 
 <br/>
