@@ -146,6 +146,8 @@ sudo dnf install fuse-libs
 flatpak install it.mijorus.gearlever
 ```
 
+<br/>
+
 ## troubleshoot
 
 ### web camera
