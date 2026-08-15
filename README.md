@@ -147,7 +147,14 @@ fwupdmgr update
 
 <br/>
 
+## flatpak setup
 
+enable third party flatpak repository using the following command:
+```bash
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
+
+<br/>
 
 
 
