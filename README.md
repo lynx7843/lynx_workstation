@@ -114,7 +114,7 @@ sudo dnf config-manager setopt rpmfusion-free-rawhide.enabled=0
 
 <br/>
 
-## firmware updates
+## codecs
 
 1. replace the **ffmpeg-free** package with rpm fusion
 ```bash
@@ -128,11 +128,16 @@ sudo dnf group upgrade multimedia
 ```bash
 sudo dnf group upgrade core
 ```
-4. enable **terra** to install **zen editor**
+
+<br/>
+
+## firmware updates
+
+1. enable **terra** to install **zen editor**
 ```bash
 sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 ```
-5. update the device firmware using:
+2. update the device firmware using:
 ```bash
 fwupdmgr refresh --force
 fwupdmgr get-devices
@@ -140,8 +145,7 @@ fwupdmgr get-updates
 fwupdmgr update
 ```
 
-
-
+<br/>
 
 
 
