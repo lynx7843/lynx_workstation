@@ -156,7 +156,14 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 <br/>
 
+## appimage setup
 
-
-
+1. for app image support install fusion
+```bash
+sudo dnf install fuse-libs
+```
+2. install **Gearlever** to manage appimages
+```bash
+flatpak install it.mijorus.gearlever
+```
 
