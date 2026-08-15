@@ -9,7 +9,6 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [setting up bootable drive](#setting-up-bootable-drive)
 - [preparing asus bios](#preparing-asus-bios)
 - [os-installation](#os-installation)
-- [post installation issues](#post-installation-issues)
 
 #### part 2 - post installation system setup
 - [dnf config](#dnf-config)
@@ -18,6 +17,10 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [firmware updates](#firmware-updates)
 - [flatpak setup](#flatpak-setup)
 - [appimage setup](#appimage-setup)
+
+#### troubleshooting
+` [web camera](#web-camera)
+- [bluetooth](#bluetooth)
 
 <br/>
 
@@ -49,30 +52,6 @@ installation and post setup guide for running fedora on a asus laptop specifical
 4. after testing select install option
 5. select you laptop drive and claim the entire space
 6. wait for the installation to finish and click shut down, remove the flash drive and restart 
-
-
-## post-installation-issues
-
-one of the main recurring after a major fedora replace is web cam not working or malfunctioning. in my case it was default **vulkan** graphics. run the following command to fix it.
-```bash
-GSK_RENDERER=gl snapshot
-```
-
-<br/>
-
-it can also be due to missing pipewire plugins. run this command to install it:
-```bash
-sudo dnf install gst-plugin-pipewire
-```
-
-<br/>
-
-if none of the above worked your best option is to fallback to the classic camera app. use the following command to install it:
-```bash
-sudo dnf install cheese
-```
-
-<br/>
 
 ## dnf config
 1. open the dnf config file:
@@ -167,3 +146,34 @@ sudo dnf install fuse-libs
 flatpak install it.mijorus.gearlever
 ```
 
+## troubleshoot
+
+### web camera
+
+one of the main recurring after a major fedora replace is web cam not working or malfunctioning. in my case it was default **vulkan** graphics. run the following command to fix it.
+```bash
+GSK_RENDERER=gl snapshot
+```
+
+<br/>
+
+it can also be due to missing pipewire plugins. run this command to install it:
+```bash
+sudo dnf install gst-plugin-pipewire
+```
+
+<br/>
+
+if none of the above worked your best option is to fallback to the classic camera app. use the following command to install it:
+```bash
+sudo dnf install cheese
+```
+
+<br/>
+
+### bluetooth
+
+reinstall the bluetooth drivers using the following command and reboot to apply the changes
+```bash
+sudo dnf reinstall bluez bluez-libs
+```
