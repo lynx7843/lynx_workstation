@@ -19,7 +19,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [appimage setup](#appimage-setup)
 
 #### troubleshooting
-` [web camera](#web-camera)
+- [web camera](#web-camera)
 - [bluetooth](#bluetooth)
 
 <br/>
