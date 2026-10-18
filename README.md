@@ -36,6 +36,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [icons](#icons)
 - [oh-my-posh](#oh-my-posh)
 - [fastfetch](#fastfetch)
+- [fonts](#fonts)
 
 #### troubleshooting
 - [web camera](#web-camera)
@@ -425,6 +426,25 @@ add fastfetch to startup
 ```bash
 echo 'fastfetch' >> ~/.bashrc
 ```
+
+<br/>
+
+## fonts
+
+install windows-compatible web fonts
+```bash
+sudo dnf install liberation-fonts google-crosextra-caladea-fonts
+```
+
+install the **inter** system font
+```bash
+sudo dnf install rsms-inter-fonts
+```
+
+apply the fonts in tweaks
+1. navigate to fonts tab on the left sidebar
+2. change both **interface text** and **document text** to ``Inter Regular``
+3. change **monospace text** to ``MesloLGL Nerd Font``
 
 </br/>
 
