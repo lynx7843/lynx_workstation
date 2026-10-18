@@ -19,7 +19,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [appimage setup](#appimage-setup)
 - [memory optimization](#memory-optimization)
 
-### part 3 - developement environment setup
+#### part 3 - developement environment setup
 - [installing vs code](#installing-vs-code)
 - [container tooling](#container-tooling)
 - [git and core building tools](#git-and-core-building-tools)
@@ -27,11 +27,11 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [connecting to local nas](#connecting-to-local-nas)
 - [nextcloud](#nextcloud)
 
-### part 4 - light-weight gaming
+#### part 4 - light-weight gaming
 - [installing steam and heroic launcher](#installing-steam-and-heroic-launcher)
 - [gamemode and mangohud](@gamemode-and-mangohud)
 
-### part 5 - customizing the gnome UI (macOS ricing)
+#### part 5 - customizing the gnome UI (macOS ricing)
 - [theme](#theme)
 - [icons](#icons)
 - [oh-my-posh](#oh-my-posh)
@@ -446,7 +446,7 @@ apply the fonts in tweaks
 2. change both **interface text** and **document text** to ``Inter Regular``
 3. change **monospace text** to ``MesloLGL Nerd Font``
 
-</br/>
+<br/>
 
 ## troubleshoot
 
