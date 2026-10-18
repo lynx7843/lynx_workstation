@@ -30,6 +30,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 
 ### part 5 - customizing the gnome UI (macOS ricing)
 - [theme](#theme)
+- [icons](#icons)
 
 #### troubleshooting
 - [web camera](#web-camera)
@@ -310,6 +311,26 @@ finally to apply the theme navigate to appearance tab in **tweaks** application 
 
 <br/>
 
+## icons
+
+clone the icon repository using the following commands. this is created by the same developer under ``WhiteSur gtk theme`` thous this is more so a companion theme for the base **WhiteSur theme**.
+```bash
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
+```
+
+run the installer with ``-a`` flag which will install all color varients
+```bash
+cd WhiteSur-icon-theme
+./install.sh -a
+```
+
+apply the icons in tweaks by following the below steps
+1. open teaks app and navigate to appearance tab
+2. look for icon drop down menu
+3. select **WhiteSur-dark**
+
+<br/>
+
 ## troubleshoot
 
 ### web camera
@@ -385,7 +406,7 @@ this can also cause by dual booting the device with windows. windows by default 
 reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
 ```
 
-
+<br/>
 
 
 
