@@ -25,6 +25,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [git and core building tools](#git-and-core-building-tools)
 - [tailscale](#tailscale)
 - [connecting to local nas](#connecting-to-local-nas)
+- [nextcloud](#nextcloud)
 
 ### part 4 - light-weight gaming
 - [installing steam and heroic launcher](#installing-steam-and-heroic-launcher)
@@ -276,6 +277,19 @@ to add your network drive:
 2. click network and at the bottom you will see a connection server input box
 3. type smb://[your_nas_tailscale_ip], hit enter
 4. enter your username and password
+
+<br/>
+
+## nextcloud
+
+install the official nextcloud application
+```bash
+flatpak install flathub com.nextcloud.desktopclient.nextcloud
+```
+1. open the application after install and click log in
+2. enter your nextcloud url (example: http://[nas_tailscale_ip]:[port])
+3. authenticate with your credentials
+4. select the folder you want to sync
 
 <br/>
 
