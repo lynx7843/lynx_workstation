@@ -179,3 +179,52 @@ reinstall the bluetooth drivers using the following command and reboot to apply 
 ```bash
 sudo dnf reinstall bluez bluez-libs
 ```
+
+### timezone
+
+if you are getting a message like bellow after entering ``timedatectl`` command in terminal it means that your motherboard hardware clock (RTC or Real Time Clock) is set to store your **local time** instead of UTC (Universal Time) and linux strongly disapproves it.
+```bash
+Local time: Tue 2026-09-08 00:19:54 +0530
+Universal time: Mon 2026-09-07 18:49:54 UTC
+RTC time: Mon 2026-09-07 18:53:59
+Time zone: Asia/Colombo (+0530, +0530)
+
+System clock synchronized: no
+NTP service: active
+RTC in local TZ: yes
+```
+
+<br/>
+
+this issue may cause time to get outdated when the laptop is put to sleep or suspended. to fix this run the following commands one after the other.
+```bash
+sudo timedatectl set-local-rtc 0
+sudo timedatectl set-ntp true
+```
+
+if the following commands didn't fixed the time issue it maybe because your device hasn't synced system clock (device hasn't checked the internet to get the real time yet). in fedora this is managed by a service called ``chrony``. run the following command to step the system clock immediately.
+
+```bash
+sudo chronyc makestep
+```
+
+if that didn't immediately snap gnome top bar to the correct time, restart the chrony service to trigger a fresh connection.
+```bash
+sudo systemctl restart chronyd
+```
+
+<br/>
+
+this can also cause by dual booting the device with windows. windows by default saves the local time to the hardware clock and linux by default saves UTC to the hardware clock and then calculates your local time (like +05.30). to fix this run the above commands on your linux os and in windows run the following commands in windows by running ``cmd`` as admin.
+
+```bash
+reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /d 1 /t REG_DWORD /f
+```
+
+
+
+
+
+
+
+
