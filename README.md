@@ -23,6 +23,8 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [installing vs code](#installing-vs-code)
 - [container tooling](#container-tooling)
 - [git and core building tools](#git-and-core-building-tools)
+- [tailscale](#tailscale)
+- [connecting to local nas](#connecting-to-local-nas)
 
 ### part 4 - light-weight gaming
 - [installing steam and heroic launcher](#installing-steam-and-heroic-launcher)
@@ -247,6 +249,33 @@ test the connection by running the following command in the terminal
 ```bash
 ssh -T git@github.com
 ```
+
+<br/>
+
+## tailscale
+run the official tailscale installer script to automatically configure the repository and install the package for fedora
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+```
+
+after installing start the background service and authenticate device
+```bash
+sudo systemctl enable --now tailscaled
+sudo tailscale up
+```
+
+it will output a link in your terminal, open that link in your browser and log in using your account.
+
+<br/>
+
+## connecting to local nas
+
+you can find the guide on setting up your own nas here: https://github.com/lynx7843/lynx_homelab
+to add your network drive:
+1. open **files** application
+2. click network and at the bottom you will see a connection server input box
+3. type smb://[your_nas_tailscale_ip], hit enter
+4. enter your username and password
 
 <br/>
 
