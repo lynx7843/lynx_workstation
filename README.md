@@ -19,6 +19,9 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [appimage setup](#appimage-setup)
 - [memory optimization](#memory-optimization)
 
+### part 3 - developement environment setup
+- [installing vs code](#installing-vs-code)
+
 #### troubleshooting
 - [web camera](#web-camera)
 - [bluetooth](#bluetooth)
@@ -158,6 +161,20 @@ cp /usr/share/applications/org.gnome.Software.desktop ~/.config/autostart/
 echo "X-GNOME-Autostart-enabled=false" >> ~/.config/autostart/org.gnome.Software.desktop
 ```
 
+<br/>
+
+## installing vs code
+
+to maintain lean memory usage and while providing complete development workspace, we need to configure efficient, native and manage necessary permissions. microsoft provides a stable rpm repo for fedora. run the following commands one by one to import the security key, add the repo and install it.
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+sudo dnf upgrade --refresh
+sudo dnf install code
+```
+
+<br/>
+
 ## troubleshoot
 
 ### web camera
@@ -185,10 +202,12 @@ sudo dnf install cheese
 
 ### bluetooth
 
-reinstall the bluetooth drivers using the following command and reboot to apply the changes
+if you are facing issues with bluetooth connectivity, reinstall the bluetooth drivers using the following command and reboot to apply the changes
 ```bash
 sudo dnf reinstall bluez bluez-libs
 ```
+
+<br/>
 
 ### timezone
 
