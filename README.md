@@ -1,6 +1,6 @@
 # Fedora 44 laptop Setup guide
 
-installation and post setup guide for running fedora on a asus laptop specifically Zenbook 14 UX3405MA_Q415MA. this system will be used for development and light weight gaming
+installation and post setup guide for running fedora on a asus laptop specifically ``Zenbook 14 UX3405MA_Q415MA``. this system will be used for development and running light weight AI models. 
 <br/>
 
 ## Table of content
@@ -17,6 +17,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [firmware updates](#firmware-updates)
 - [flatpak setup](#flatpak-setup)
 - [appimage setup](#appimage-setup)
+- [memory optimization](#memory-optimization)
 
 #### troubleshooting
 - [web camera](#web-camera)
@@ -147,6 +148,15 @@ flatpak install it.mijorus.gearlever
 ```
 
 <br/>
+
+## memory optimization
+
+gnome software runs silently in the background at startup to check for updates. this could eat up around 1GB of ram, stop it from autostarting by running the following commands.
+```bash
+mkdir -p ~/.config/autostart
+cp /usr/share/applications/org.gnome.Software.desktop ~/.config/autostart/
+echo "X-GNOME-Autostart-enabled=false" >> ~/.config/autostart/org.gnome.Software.desktop
+```
 
 ## troubleshoot
 
