@@ -21,6 +21,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 
 ### part 3 - developement environment setup
 - [installing vs code](#installing-vs-code)
+- [container tooling](#container-tooling)
 
 #### troubleshooting
 - [web camera](#web-camera)
@@ -171,6 +172,23 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 sudo dnf upgrade --refresh
 sudo dnf install code
+```
+
+<br/>
+
+## container tooling
+instead of running docker, which runs continuous background daemon use fedora's native **podman**. install it alongside the docker alias packages so all your standard docker commands keep working, but instead of docker [command] you use podman [command].
+```bash
+sudo dnf install podman podman-docker podman-compose
+```
+
+<br/>
+
+because podman is highly secure, it runs **rootless** by default. if you use local volume binds like mapping a local folder to a database container, fedora's **SELinux** might block it. to fix this when running container you need to append a ``:z`` to the volume path in your ``docker-compose.yml`` file.
+
+```yml
+volumes:
+  - ./my-database-data:/data/db:Z
 ```
 
 <br/>
