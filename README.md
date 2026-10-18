@@ -35,6 +35,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [theme](#theme)
 - [icons](#icons)
 - [oh-my-posh](#oh-my-posh)
+- [fastfetch](#fastfetch)
 
 #### troubleshooting
 - [web camera](#web-camera)
@@ -333,6 +334,10 @@ install extension manager and search and install the following
 - just perfection
 - dock window preview
 
+open settings under app grid manager and set column slider to 8 adn row slider to 4
+
+> you can tweak settings under each of above mentioned extensions to get the perfect look that you want.
+
 <br/>
 
 theme that I am using it from: https://github.com/vinceliuice/WhiteSur-gtk-theme. run the following commands to install this theme. 
@@ -401,6 +406,27 @@ source ~/.bashrc
 ```
 
 <br/>
+
+## fastfetch
+
+fastfetch is a modern c-based replacement for neofetch. it shows your system info in your terminal. to install it run:
+```bash
+sudo dnf install fastfetch
+```
+generate config file (JSONC) with the following command
+```bash
+fastfetch --gen-config
+```
+customize the aesthetic by copying the code of my config.json from this repository.
+```bash
+code ~/.config/fastfetch/config.jsonc
+```
+add fastfetch to startup
+```bash
+echo 'fastfetch' >> ~/.bashrc
+```
+
+</br/>
 
 ## troubleshoot
 
