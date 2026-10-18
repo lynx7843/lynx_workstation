@@ -22,6 +22,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 ### part 3 - developement environment setup
 - [installing vs code](#installing-vs-code)
 - [container tooling](#container-tooling)
+- [git and core building tools](#git-and-core-building-tools)
 
 #### troubleshooting
 - [web camera](#web-camera)
@@ -189,6 +190,53 @@ because podman is highly secure, it runs **rootless** by default. if you use loc
 ```yml
 volumes:
   - ./my-database-data:/data/db:Z
+```
+
+<br/>
+
+## git and core building tools
+install git along with standard development headers required for compiling native code dependencies.
+```bash
+sudo dnf install git gcc-c++ make
+```
+
+after installing git you have to configure it with your github account. run the following commands (replacing the quotes with actual credentials) to set your global identity.
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+```
+
+generate an ssh key using the following command.
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+start the ssh agent and add your newly created private key to it.
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
+
+print your public key using the following command. copy the entire output.
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+<br/>
+
+add the key to github by following these steps:
+<br/>
+1. log into github and click on the profile icon
+2. click settings then **ssh and gpg keys** section
+3. click on **new ssh key** button
+4. give it a title, make sure type is set to **authentication key**
+5. past the key you copied to **key** box and click add ssh key.
+
+<br/>
+
+test the connection by running the following command in the terminal
+```bash
+ssh -T git@github.com
 ```
 
 <br/>
