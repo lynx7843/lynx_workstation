@@ -26,10 +26,12 @@ installation and post setup guide for running fedora on a asus laptop specifical
 
 ### part 4 - light-weight gaming
 - [installing steam and heroic launcher](#installing-steam-and-heroic-launcher)
+- [gamemode and mangohud](@gamemode-and-mangohud)
 
 #### troubleshooting
 - [web camera](#web-camera)
 - [bluetooth](#bluetooth)
+- [timezone](#timezone)
 
 <br/>
 
@@ -250,6 +252,20 @@ steam handles primary libraries natively and for epic games and gog use heroic g
 ```bash
 sudo dnf install steam
 flatpak install flathub com.heroicgameslauncher.hgl
+```
+
+<br/>
+
+## gamemode and mangohud
+
+gamemode is a daemon that temporarily alters your laptop's power state, cpu governor and process priority. mangohud is a on-screen overlay that allows you to monitor your system info. install both using the following command
+```bash
+sudo dnf install gamemode mangohud
+```
+
+to enable these in your steam games paste the below command on game **launch options**
+```bash
+gamemoderun mangohud %command%
 ```
 
 <br/>
