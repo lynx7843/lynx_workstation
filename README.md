@@ -34,6 +34,7 @@ installation and post setup guide for running fedora on a asus laptop specifical
 ### part 5 - customizing the gnome UI (macOS ricing)
 - [theme](#theme)
 - [icons](#icons)
+- [oh-my-posh](#oh-my-posh)
 
 #### troubleshooting
 - [web camera](#web-camera)
@@ -371,6 +372,33 @@ apply the icons in tweaks by following the below steps
 1. open teaks app and navigate to appearance tab
 2. look for icon drop down menu
 3. select **WhiteSur-dark**
+
+<br/>
+
+## oh-my-posh
+
+oh my posh is the perfect final touch for any development setup. it can provide your terminal a highly customized informative prompt. to install this run the following commands.
+```bash
+sudo dnf install curl unzip
+curl -s https://ohmyposh.dev/install.sh | bash -s
+```
+
+install nerd font to fix missing icon issues in **oh my posh**
+```bash
+oh-my-posh font install meslo
+```
+to apply the font open terminal navigate to preferences, under **profile** section click the box for custom fonts and select ``MesloLGL Nerd Font``
+
+<br/>
+configure .bashrc file to configure oh-my-posh to open by default in every new terminal window. 
+```bash
+echo 'eval "$(oh-my-posh init bash --config ~/.poshthemes/jandedobbeleer.omp.json)"' >> ~/.bashrc
+```
+
+reload the shell
+```bash
+source ~/.bashrc
+```
 
 <br/>
 
