@@ -28,6 +28,9 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [installing steam and heroic launcher](#installing-steam-and-heroic-launcher)
 - [gamemode and mangohud](@gamemode-and-mangohud)
 
+### part 5 - customizing the gnome UI (macOS ricing)
+- [theme](#theme)
+
 #### troubleshooting
 - [web camera](#web-camera)
 - [bluetooth](#bluetooth)
@@ -267,6 +270,43 @@ to enable these in your steam games paste the below command on game **launch opt
 ```bash
 gamemoderun mangohud %command%
 ```
+
+<br/>
+
+## theme
+
+install tweaks and extension manager for applying themes and UI modifications
+```bash
+sudo dnf install gnome-tweaks
+flatpak install flathub com.mattjakeman.ExtensionManager
+```
+install extension manager and search and install the following
+- user themes
+- dash to dock
+- blur my shell
+- app grid tuner
+- just perfection
+- dock window preview
+
+<br/>
+
+theme that I am using it from: https://github.com/vinceliuice/WhiteSur-gtk-theme. run the following commands to install this theme. 
+> note: I am using -c dark -t grey flags to ensure the theme render is a striking black and dark grey palette. remove these flags if you want to use the default transparent look.
+
+```bash
+sudo dnf install sassc glib2-devel
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
+cd WhiteSur-gtk-theme
+./install.sh -c dark -t grey
+```
+
+apply the theme to gtk4 and fltpaks
+```bash
+./install.sh -l
+./tweaks.sh -F
+```
+
+finally to apply the theme navigate to appearance tab in **tweaks** application and select WhiteSur-Dark-grey for **legacy applications** and **shell**.
 
 <br/>
 
