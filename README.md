@@ -24,6 +24,9 @@ installation and post setup guide for running fedora on a asus laptop specifical
 - [container tooling](#container-tooling)
 - [git and core building tools](#git-and-core-building-tools)
 
+### part 4 - light-weight gaming
+- [installing steam and heroic launcher](#installing-steam-and-heroic-launcher)
+
 #### troubleshooting
 - [web camera](#web-camera)
 - [bluetooth](#bluetooth)
@@ -237,6 +240,16 @@ add the key to github by following these steps:
 test the connection by running the following command in the terminal
 ```bash
 ssh -T git@github.com
+```
+
+<br/>
+
+## installing steam and heroic launcher
+
+steam handles primary libraries natively and for epic games and gog use heroic games launcher instead, this is a light-weight open-sourced alternative built specifically for linux. run the following commands to install both.
+```bash
+sudo dnf install steam
+flatpak install flathub com.heroicgameslauncher.hgl
 ```
 
 <br/>
