@@ -3,6 +3,11 @@
 installation and post setup guide for running fedora on a asus laptop specifically ``Zenbook 14 UX3405MA_Q415MA``. this system will be used for development and running light weight AI models. 
 <br/>
 
+after done you can visit my local AI setup guide: https://github.com/lynx7843/lynx-AI-hub
+or view my home server guide: https://github.com/lynx7843/lynx_homelab
+
+<br/>
+
 ## Table of content
 
 #### part 1 - Installation
